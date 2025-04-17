@@ -183,7 +183,7 @@ blockquote::after{
     padding: 1.35rem 2rem;
 }
 .eapContainer{
-    width: 90%;
+    width: 1200px;
     margin: auto;
 }
 .eapContainerM{
@@ -1462,6 +1462,9 @@ footer a, footer{
     
     .eapArticleImage {
         height: 300px;
+    }
+    .eapContainer{
+        width: 90%;
     }
 }
 
