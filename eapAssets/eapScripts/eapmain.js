@@ -1,3 +1,10 @@
+let eapOffsetBtn = document.getElementById("eapOffsetBtn");
+let eapfloatingnav = document.getElementById("eapfloatingnav");
+
+eapOffsetBtn.addEventListener('click', () => {
+    eapfloatingnav.classList.toggle("eapOffsetMenu");
+})
+
 // ------ Interactive Map Functionality ------
 document.addEventListener('DOMContentLoaded', function() {
     const mapRegions = document.querySelectorAll('.eapMapRegionArea');
@@ -194,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             region.addEventListener('mouseleave', function() {
-                this.style.opacity = '0.7';
+                this.style.opacity = '1';
             });
         });
     }
@@ -204,13 +211,13 @@ document.addEventListener('DOMContentLoaded', function() {
         mapPins.forEach(pin => {
             pin.addEventListener('mouseenter', function() {
                 this.setAttribute('r', '12');
-                this.style.fill = '#A800FF';
+                this.style.fill = '#EE8B0C';
                 this.style.transition = 'r 0.3s ease, fill 0.3s ease';
             });
             
             pin.addEventListener('mouseleave', function() {
                 this.setAttribute('r', '10');
-                this.style.fill = '#DC5B44';
+                this.style.fill = '#EE8B0C';
             });
         });
     }
@@ -325,17 +332,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // For demonstration, show success message
                 const successMessage = document.createElement('p');
                 successMessage.textContent = 'Merci de vous être inscrit à notre newsletter!';
-                successMessage.style.color = '#4CAF50';
+                successMessage.style.color = '#EE8B0C';
                 
                 newsletterForm.innerHTML = '';
                 newsletterForm.appendChild(successMessage);
             } else {
                 // Show error
-                emailInput.style.borderColor = '#DC5B44';
+                emailInput.style.borderColor = '#EE8B0C';
                 
                 const errorMessage = document.createElement('p');
                 errorMessage.textContent = 'Veuillez entrer une adresse email valide.';
-                errorMessage.style.color = '#DC5B44';
+                errorMessage.style.color = '#EE8B0C';
                 errorMessage.style.fontSize = '14px';
                 
                 // Remove any existing error messages

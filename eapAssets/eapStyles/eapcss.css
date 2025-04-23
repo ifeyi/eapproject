@@ -7,8 +7,8 @@
 :root{
     --eapPurple: #A800FF;
     --eapPurpleLight: #EDB4CA;
-    --eapOrange: #DC5B44;
-    --eapLightOrange: #F18A0D;
+    --eapOrange: #9B1914;
+    --eapLightOrange: #EE8B0C;
     --eapOrangeLight: #F4C2B0;
     --eapYellow: #ECD178;
     --eapDarkYellow: #C9B267;
@@ -28,7 +28,6 @@
     --eapTransition: all .48s ease-in-out;
     --eapBoxShadow: 0 0 128px 0 rgba(0, 0, 0, .1);
 }
-
 body{
     color: var(--eapBlack);
     font-family: 'Roboto', sans-serif;
@@ -36,7 +35,6 @@ body{
     line-height: 1.5;
     overflow-x: hidden;
 }
-
 h1, h2, h3, h4, h5, h6{
     font-family: 'Oswald', sans-serif;
     line-height: 1.1;
@@ -183,7 +181,7 @@ blockquote::after{
     padding: 1.35rem 2rem;
 }
 .eapContainer{
-    width: 1200px;
+    width: 90%;
     margin: auto;
 }
 .eapContainerM{
@@ -461,7 +459,7 @@ header #eapY, header #eapZ{
     padding: 128px 0 320px;
     position: relative;
     overflow: hidden;
-    background-color: var(--eapBurgundy);
+    background-color: var(--eapBlack);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -479,7 +477,22 @@ header #eapY, header #eapZ{
     height: 100%;
     overflow: hidden;
 }
-
+.eapforeground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+#eapHero .eapIcon{
+    z-index: 2;
+}
+.eapHeroBackground img{
+    width:100%;
+}
 .eapHeroShapes {
     position: absolute;
     top: 0;
@@ -649,7 +662,7 @@ header #eapY, header #eapZ{
 
 #eapMainLogoWrapper h1 span {
     font-size: 28px;
-    color: var(--eapOrange);
+    color: var(--eapWhite);
 }
 
 .eapHeroDesc {
@@ -705,11 +718,45 @@ header #eapY, header #eapZ{
     width: 100%;
     position: relative;
 }
-#eapMap .st0{
+
+#eapMap .st0 {
     fill: var(--eapLighterGray);
 }
-#eapMap .eapMapRegionArea{
-    fill: var(--eapLightGray);
+
+#eapMap .st0, #eapMap .st1 {
+    stroke: var(--eapPureWhite);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: .5px;
+}
+
+#eapMap .st2 {
+    fill: #efefef;
+}
+
+#eapMap .st3 {
+    fill: #ccc;
+}
+
+#eapMap .st4 {
+    opacity: .1;
+}
+
+#eapMap .st5 {
+    fill: var(--eapLightOrange);
+}
+
+#eapMap .st6 {
+    fill: #ddd;
+    isolation: isolate;
+    opacity: .5;
+}
+
+#eapMap .st1 {
+    fill: #eee;
+}
+#eapMap .st7, #eapMap .st2{
+    fill: var(--eapOrangeLight)
 }
 #eapMapSvg {
     width: 100%;
@@ -723,7 +770,7 @@ header #eapY, header #eapZ{
 
 .eapMapRegionArea:hover {
     opacity: 1 !important;
-    fill: rgba(220, 91, 68, 0.4) !important;
+    fill: #EDC30C !important;
 }
 
 .eapMapPin {
@@ -1044,7 +1091,7 @@ header #eapY, header #eapZ{
 }
 
 .eapObjectifsItem h3 {
-    color: var(--eapOrange);
+    color: #9B1914;
     margin-bottom: 10px;
     font-size: 22px;
     position: relative;
@@ -1423,9 +1470,53 @@ footer a, footer{
         transform: translateY(0);
     }
 }
-
+#eapfloatingnav{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    box-shadow: 0 0 128px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+#eapOffsetBtn{
+    padding: 8px 32px 8px 16px;
+    background-color: var(--eapPureWhite);
+    box-shadow: 0 0 64px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    color: var(--eapDarkBrown);
+    position: fixed;
+    right: -4%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 21px;
+}
+#eapOffsetBtn:hover, #eapOffsetBtn:focus{
+    background-color: var(--eapWhite);
+    box-shadow: 0 0 128px rgba(0, 0, 0, .1);
+    color: var(--eapBrown);
+}
+.eapOffsetMenu{
+    right: -999px !important;
+}
+#eapfloatingnav a{
+    padding:8px 16px;
+    background-color: var(--eapPureWhite);
+    width: 100%;
+}
+#eapfloatingnav a:hover,
+#eapfloatingnav a:focus{
+    background-color: var(--eapLighterGray);
+}
 /* MEDIA QUERIES */
-
+@media screen and (min-width:1920px){
+    #eapOffsetBtn{
+        right: -3%;
+    }
+}
 @media screen and (max-width:992px){
     h2 {
         font-size: 2.5rem;
@@ -1499,17 +1590,54 @@ footer a, footer{
         gap: 15px;
         text-align: center;
     }
+    #eapfloatingnav{
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width:100%;
+        transform: translateX(0);
+        z-index: 9999;
+        box-shadow: 0 0 128px rgba(0, 0, 0, .1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    #eapfloatingnav .eapFlexColumn{
+        display: inline-flex;
+        flex-direction:row;
+        align-items: stretch;  
+        flex-wrap: wrap;
+    }
+    #eapOffsetBtn {
+        right: -16%;
+    }
+    #eapfloatingnav .eapFlexColumn a{
+        flex: 0 1 50%;
+    }
+    #eapFooter .eapFlex{
+        flex-direction: column;
+    }
+    .eapHeroBackground img {
+        height: 100%;
+        width: auto;
+    }
 }
 
 @media screen and (max-width:576px){
     h2 {
         font-size: 1.8rem;
     }
-    
+    .eapLogoContainer{
+        width: 64px;
+        height: 64px;
+    }
     #eapHero {
         height: 500px;
+        padding: 64px 0 512px;
     }
-    
+    #eapBg {
+        bottom: -2.5%;
+    }
     .eapMapZoneStats {
         flex-direction: column;
         gap: 15px;
@@ -1551,4 +1679,35 @@ footer a, footer{
 }
 #eapFooter h3{
     color: var(--eapWhite);
+}
+
+@keyframes eappulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.eappulse {
+    animation: eappulse 2s infinite;
+}
+
+.eapIconPdf{
+    width: 32px;
+    fill: var(--eapDarkBrown);
+}
+.eapObjectifsItem h3 {
+    width: 100%;
+}
+.eapObjectifsItem a {
+    width: 100%;
+}
+#eapDocumentsSection{
+    padding: 128px 0;
 }
